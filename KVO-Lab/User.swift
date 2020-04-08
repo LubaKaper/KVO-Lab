@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct User {
-    var name: String
-    var balance: Int
+@objc class  Account: NSObject {
+    static var shared = Account()
+   @objc dynamic var users = [UserInfo]()
+   
 }

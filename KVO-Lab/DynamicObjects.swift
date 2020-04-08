@@ -11,10 +11,10 @@ import Foundation
 
 @objc class UserInfo: NSObject {
     static var shared = UserInfo()
-    @objc dynamic var amount: Int
-    @objc dynamic var name: String
-    override private init() {
-        amount = 0
-        name = "John"
-    }
+    @objc dynamic var amount: Int = 0
+    @objc dynamic var name: String = ""
+//    override private init() {
+//        amount = 0
+//        name = "John"
+//    }
 }
