@@ -17,7 +17,7 @@ class TableViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    var user = Account.shared.users.first
+ 
 //    var users = [User]() {
 //        didSet {
 //
@@ -33,12 +33,16 @@ class TableViewController: UIViewController {
        
         tableView.dataSource = self
        configureUserObservation()
+        loadData()
     }
     private func configureUserObservation() {
         usersObservation = Account.shared.observe(\.users, options: [.old, .new], changeHandler: { (accounts, change) in
             guard let accounts = change.newValue else { return}
             self.users = accounts
         })
+    }
+    private func loadData() {
+        users = Account.shared.users
     }
     
 //    private func addUser(user: User) {
